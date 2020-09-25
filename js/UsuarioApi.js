@@ -35,21 +35,20 @@ function adicionarUsuarios(objUsuario) {
 
 function editarUsuario(codigo, objUsuario) {
     // Update a user
-        var json = JSON.stringify(objUsuario);
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("PUT", url+'/codigo='+codigo, true);
-        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-        xhr.onload = function () {
-            var usuario = JSON.parse(xhr.responseText);
-            if (xhr.readyState == 4 && xhr.status == "200") {
-                console.table(usuario);
-            } else {
-                console.error(usuario);
-            }
+    var json = JSON.stringify(objUsuario);
+    var xhr = new XMLHttpRequest();
+    xhr.open("PUT", url+'/codigo='+codigo, true);
+    xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+    xhr.onload = function () {
+        var usuario = JSON.parse(xhr.responseText);
+        if (xhr.readyState == 4 && xhr.status == "200") {
+            console.table(usuario);
+        } else {
+            console.error(usuario);
         }
-        xhr.send(json);
-  }
+    }
+    xhr.send(json);
+}
 
 function deleteUsuario(codigo) {
         var xhr = new XMLHttpRequest();
