@@ -8,7 +8,11 @@ function popularTabela(usuarios) {
     }
 }
 
+
+
+
 function inserirLinhaTabela(usuario) {
+    var idEditar = usuario.codigo
     var tabela = document.getElementById('tabelaDeUsuarios')
     var numLinhas = tabela.rows.length
     var novaLinha = tabela.insertRow(numLinhas)
@@ -25,6 +29,13 @@ function inserirLinhaTabela(usuario) {
     var celLogin = novaLinha.insertCell(3)
     celLogin.innerHTML = usuario.login
 
+    var celAcao = novaLinha.insertCell(4)
+    var buttonEditar = document.createElement("BUTTON")
+    buttonEditar.setAttribute('editar-id', idEditar)
+    buttonEditar.classList.add("editar")
+    buttonEditar.innerHTML = "Editar"
+
+    celAcao.append(buttonEditar)
 }
 
 function validarUsuario(acao) {
@@ -92,6 +103,7 @@ function validarUsuario(acao) {
     }
     return false
 }
+
 
 
 window.onload = function () {
