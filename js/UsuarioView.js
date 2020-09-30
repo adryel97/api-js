@@ -33,9 +33,19 @@ function inserirLinhaTabela(usuario) {
     var buttonEditar = document.createElement("BUTTON")
     buttonEditar.setAttribute('editar-id', idEditar)
     buttonEditar.classList.add("editar")
+    buttonEditar.classList.add("btn")
+    buttonEditar.classList.add("btn-warning")
     buttonEditar.innerHTML = "Editar"
 
+    var buttonExcluir = document.createElement("BUTTON")
+    buttonExcluir.setAttribute('excluir-id', idEditar)
+    buttonExcluir.classList.add("excluir")
+    buttonExcluir.classList.add("btn")
+    buttonExcluir.classList.add("btn-danger")
+    buttonExcluir.innerHTML = "Excluir"
+
     celAcao.append(buttonEditar)
+    celAcao.append(buttonExcluir)
 }
 
 function validarUsuario(acao) {
